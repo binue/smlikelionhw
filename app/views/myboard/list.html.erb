@@ -1,0 +1,26 @@
+<h2 class='text-center'>내 게시판</h2>
+<div class="row mt-4">
+<table class="table">
+  <thead class="thead-inverse">
+    <tr>
+      <th>글 번호</th>
+      <th>제목</th>
+      <th>내용</th>
+      <th colspan=2>작성자</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @every_post.each do |p| %>      
+    <tr>
+      <th scope="row"><%= p.id %></th>
+      <td><%= p.title %> </td>
+      <td><%= p.body %></td>
+      <td><%= p.writer %></td>      
+      <td><a class="text-muted" href="update_view/<%= p.id %>"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+        <a class="text-muted" href="destroy/<%= p.id %>"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+<a href="/myboard/index"> <button class="rounded-circle btn btn-secondary float-right" style="width:50px; height:50px;"><i class="fa fa-plus-circle text-right" aria-hidden="true"></i></button></a>

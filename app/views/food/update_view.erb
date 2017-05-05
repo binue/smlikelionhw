@@ -1,0 +1,9 @@
+<h2 class='text-center mb-3'>나만의 음식 사전 - Edit</h2> 
+
+<form action="/food/update/<%= @one_food.id %>" method="POST">
+  음식이름 : <input type="text" name="name" value="<%= @one_food.name %>" class="form-control"/><br/>
+  칼로리 : <input type="text" name="calories" value="<%= @one_food.calories %>" class="form-control"/><br/>
+  <div class="mt-3 text-right">
+    <button type="submit" class="btn btn-secondary">음식사전 수정 완료</button>
+  </div>
+</form>

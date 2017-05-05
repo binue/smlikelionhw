@@ -1,0 +1,19 @@
+<h2 class='text-center'>나만의 음식 사전</h2>
+<div class="row mt-5">
+<% @everyfood.each do |p| %>
+  <div class="col-4">
+        <div class="card mb-3 ">
+            <div class="card-block">
+                <img class="card-img-top img-fluid mx-auto d-block" src="http://img.vogue.co.kr/vogue/2016/06/style_574ea8e6d33e8-360x240.jpg" width="200px" alt="Card image cap">
+                <h4 class="card-title text-center font-weight-bold"><%= p.name %></h4>
+                <p class="card-text text-center"><%= p.calories %> 칼로리 </p>
+                <p class="card-text text-right">
+                    <a class="text-muted" href="update_view/<%= p.id %>"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                    <a class="text-muted" href="destroy/<%= p.id %>"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                </p>
+            </div>
+        </div>
+    </div>
+<% end %>
+</div>
+<a href="/food/index"> <button class="rounded-circle btn btn-secondary float-right" style="width:50px; height:50px;"><i class="fa fa-plus-circle text-right" aria-hidden="true"></i></button></a>

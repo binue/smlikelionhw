@@ -1,0 +1,24 @@
+<h2 class='text-center'>나만의 왓챠</h2>
+<div class="row mt-4">
+<table class="table text-center">
+    <tr class="text-center">
+      <th class="text-center">영화 제목</th>
+      <th class="text-center">봤던 날</th>
+      <th class="text-center">감상</th>
+      <th></th>
+    </tr>
+  <tbody>
+  <% @everymovie.each do |p| %>     
+    <tr>
+      <td><%= p.title %></td>
+      <td><%= p.movietime %> </td>
+      <td><%= p.content %>  </td>   
+      <td><span class="ml-auto"><a class="text-muted" href="update_view/<%= p.id %>"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+        <a class="text-muted" href="destroy/<%= p.id %>"><i class="fa fa-trash-o" aria-hidden="true"></i></a></span></td> 
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+<a href="/movie/index"> <button class="rounded-circle btn btn-secondary float-right" style="width:50px; height:50px;"><i class="fa fa-plus text-right" aria-hidden="true"></i></button></a>
+

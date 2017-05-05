@@ -1,0 +1,16 @@
+<h2 class='text-center'>버킷리스트</h2>
+<div class="mt-5 mb-3">
+  
+<ul class="list-group">
+  <% @every_bucketlist.each do |p| %>
+    <li class="list-group-item"><%= p.content %>
+    <span class="ml-auto">
+            <a href="update_view/<%= p.id %>"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+            <a href="destroy/<%= p.id %>"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+    </span>
+  </li>
+  <% end %>
+</ul>
+</div>
+
+<a href="/bucketlist/index"> <button class="btn btn-primary float-right"><i class="fa fa-plus" aria-hidden="true"></i></button></a>

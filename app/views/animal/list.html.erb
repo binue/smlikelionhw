@@ -1,0 +1,19 @@
+<h2 class='text-center'>나만의 동물 사전</h2>
+<div class="row mt-5">
+<% @everyanimal.each do |p| %>
+    <div class="col-3">
+        <div class="card mb-3 ">
+            <div class="card-block">
+                <img class="card-img-top img-fluid" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTEwmUPm-crcZOD8dL7yeIbzA23dym8SzIZwtUNUWAK4uTJAs6t" width="200px" alt="Card image cap">
+                <h4 class="card-title text-center font-weight-bold"><%= p.title %> </h4>
+                <p class="card-text text-center">특징 : <%= p.content %> </p>
+                <p class="card-text text-right">
+                    <a class="text-info" href="update_view/<%= p.id %>"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                    <a class="text-info" href="destroy/<%= p.id %>"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                </p>
+            </div>
+        </div>
+    </div>
+<% end %>
+</div>
+<a href="/animal/index"> <button class="btn btn-info float-right"><i class="fa fa-plus-circle text-right" aria-hidden="true"></i></button></a>
